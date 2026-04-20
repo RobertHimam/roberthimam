@@ -5,7 +5,7 @@ import { useState } from "react";
 import clsx from "clsx";
 
 const NAV_LINKS = [
-  { label: "About", href: "#about" },
+  { label: "About", href: "#hero" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
