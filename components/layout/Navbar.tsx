@@ -5,11 +5,12 @@ import { useState } from "react";
 import clsx from "clsx";
 
 const NAV_LINKS = [
-  { label: "About", href: "#hero" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#hero" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
@@ -34,7 +35,7 @@ export function Navbar() {
       >
         <div className="max-w-[900px] mx-auto px-5 sm:px-8 flex items-center justify-between h-14">
           {/* Logo */}
-          <a href="#hero" className="font-serif text-[15px] font-semibold text-stone-900 tracking-tight hover:opacity-70 transition-opacity">
+          <a href="/" className="font-serif text-[15px] font-semibold text-stone-900 tracking-tight hover:opacity-70 transition-opacity">
             RH<span className="text-stone-400">.</span>
           </a>
 

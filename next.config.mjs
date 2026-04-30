@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.bee.id",
       },
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
+      },
     ],
   },
 };
