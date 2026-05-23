@@ -9,3 +9,4 @@ node_modules/
 .gemini
 GEMINI.md
 CLAUDE.md
+tsconfig.tsbuildinfo
