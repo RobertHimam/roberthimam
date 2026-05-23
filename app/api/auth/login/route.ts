@@ -36,7 +36,6 @@ export async function POST(request: Request) {
     }
 
     const session = await getSession();
-    await session.regenerate(); // Prevent session fixation
     session.user = {
       email: adminEmail,
       isAdmin: true,
