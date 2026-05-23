@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import ReactMarkdown from "react-markdown";
 import { format } from "date-fns";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -52,11 +53,13 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </div>
 
           {post.cover_image && (
-            <div className="aspect-[21/9] rounded-3xl overflow-hidden border bg-gray-100 mb-16">
-              <img
+            <div className="rounded-3xl overflow-hidden border bg-gray-100 mb-16">
+              <Image
                 src={post.cover_image}
                 alt={post.title}
-                className="w-full h-full"
+                width={1200}
+                height={630}
+                className="object-cover w-full"
               />
             </div>
           )}

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import { Upload, Save, Eye, Edit3, Trash2, Globe, Lock } from "lucide-react";
 import { clsx } from "clsx";
+import Image from "next/image";
 
 interface BlogPost {
   id?: string;
@@ -48,7 +49,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
           .replace(/ +/g, "-"),
       }));
     }
-  }, [post.title, mode]);
+  }, [post.title, mode, post.slug]);
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -139,10 +140,12 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
             <div className="prose prose-lg max-w-none bg-white p-8 rounded-xl border min-h-[600px]">
               <h1>{post.title}</h1>
               {post.cover_image && (
-                <img
+                <Image
                   src={post.cover_image}
                   alt={post.title}
-                  className="w-full h-64 object-cover rounded-lg mb-8"
+                  width={800}
+                  height={400}
+                  className="object-cover rounded-lg mb-8"
                 />
               )}
               <ReactMarkdown>{post.content}</ReactMarkdown>
@@ -199,7 +202,13 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
               <label className="text-sm font-medium text-gray-700">Cover Image</label>
               {post.cover_image && (
                 <div className="relative group rounded-lg overflow-hidden border mb-2">
-                  <img src={post.cover_image} alt="Cover" className="w-full aspect-video object-cover" />
+                  <Image
+                    src={post.cover_image}
+                    alt="Cover"
+                    width={800}
+                    height={450}
+                    className="object-cover"
+                  />
                   <button
                     onClick={() => setPost({ ...post, cover_image: "" })}
                     className="absolute top-2 right-2 p-1.5 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"

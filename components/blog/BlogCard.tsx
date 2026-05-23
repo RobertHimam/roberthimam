@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { format } from "date-fns";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 interface BlogCardProps {
   post: {
@@ -20,10 +21,11 @@ export default function BlogCard({ post }: BlogCardProps) {
     >
       <div className="aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 border relative">
         {post.cover_image ? (
-          <img
+          <Image
             src={post.cover_image}
             alt={post.title}
-            className="w-full h-full group-hover:scale-105 transition-transform duration-500"
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-gray-300">
