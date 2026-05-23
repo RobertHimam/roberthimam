@@ -12,11 +12,10 @@ export async function POST(request: Request) {
     const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH;
 
     if (!adminEmail || !adminPasswordHash) {
-      console.error("Missing auth env vars")
       return NextResponse.json(
         { message: "Authentication not configured" },
         { status: 500 }
-      )
+      );
     }
 
 
@@ -37,6 +36,7 @@ export async function POST(request: Request) {
     }
 
     const session = await getSession();
+    await session.regenerate(); // Prevent session fixation
     session.user = {
       email: adminEmail,
       isAdmin: true,

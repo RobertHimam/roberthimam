@@ -14,6 +14,9 @@ export const sessionOptions = {
   cookieName: "robert_himam_session",
   cookieOptions: {
     secure: process.env.NODE_ENV === "production",
+    httpOnly: true, // Prevent XSS attacks from stealing cookies
+    sameSite: 'lax', // CSRF protection
+    path: '/', // Ensure cookie is sent for all paths
   },
 };
 
