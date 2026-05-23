@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     description: "8+ years building scalable microservices and high-performance APIs.",
     type: "website",
   },
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
