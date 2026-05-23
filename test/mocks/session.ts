@@ -8,8 +8,8 @@ export interface MockSession extends SessionData {
 // Create a mock iron-session
 export function createMockSession(overrides?: Partial<MockSession>): MockSession {
   return {
-    user: overrides.user,
-    isLoggedIn: overrides.isLoggedIn ?? !!overrides.user,
+    user: overrides?.user,
+    isLoggedIn: overrides?.isLoggedIn ?? !!overrides?.user,
     save: vi.fn().mockResolvedValue(undefined),
     destroy: vi.fn().mockResolvedValue(undefined),
   };
