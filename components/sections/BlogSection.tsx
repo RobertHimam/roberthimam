@@ -8,7 +8,7 @@ async function getLatestPosts() {
     .from("blog_posts")
     .select("id, title, slug, excerpt, cover_image, published_at")
     .eq("published", true)
-    .order("published_at", { ascending: false })
+    .order("created_at", { ascending: false })
     .limit(3);
 
   if (error) {
