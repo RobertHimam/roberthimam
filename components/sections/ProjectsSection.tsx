@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { PROJECTS } from "@/lib/data";
-import { fadeUp } from "@/lib/animations";
+import { fadeUp, hoverSpring } from "@/lib/animations";
 
 const PROJECT_TAGS: Record<string, string[]> = {
   "proj-1": ["Golang", "Kafka", "PostgreSQL", "Redis"],
@@ -28,9 +28,9 @@ export function ProjectsSection() {
           <motion.article
             key={project.id}
             variants={fadeUp}
-            whileHover={{ y: -3 }}
-            transition={{ duration: 0.2 }}
-            className="group flex flex-col p-6 rounded-2xl border border-stone-200 hover:border-stone-300 bg-white hover:shadow-sm transition-all duration-200"
+            whileHover={{ y: -5, scale: 1.012 }}
+            transition={hoverSpring}
+            className="group flex flex-col p-6 rounded-2xl border border-stone-200 hover:border-stone-300 bg-white hover:shadow-md transition-[border-color,box-shadow] duration-300"
           >
             {/* Header */}
             <div className="flex items-start justify-between gap-3 mb-4">
@@ -57,8 +57,8 @@ export function ProjectsSection() {
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ x: 1, y: -1 }}
-                    transition={{ duration: 0.15 }}
+                    whileHover={{ x: 2, y: -2 }}
+                    transition={hoverSpring}
                     className="text-[11px] font-mono text-stone-400 hover:text-stone-800 transition-colors"
                   >
                     {project.url.replace("https://", "")} ↗

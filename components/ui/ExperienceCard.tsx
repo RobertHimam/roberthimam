@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { fadeUp } from "@/lib/animations";
+import { fadeUp, hoverSpring } from "@/lib/animations";
 import clsx from "clsx";
 
 interface ExperienceCardProps {
@@ -21,8 +21,8 @@ export function ExperienceCard({ title, company, period, description, bullets, l
       <div className="flex gap-4 py-6 border-b border-stone-100 last:border-0">
         <div className="flex-shrink-0 mt-0.5">
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.08 }}
+            transition={hoverSpring}
             className="w-9 h-9 rounded-lg bg-white border border-stone-100 flex items-center justify-center overflow-hidden"
           >
             {logoUrl ? (

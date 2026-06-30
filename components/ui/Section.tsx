@@ -15,7 +15,7 @@ interface SectionProps {
 
 export function Section({ id, title, children, className, wide }: SectionProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <section id={id} ref={ref} className={clsx("py-14 border-b border-stone-200", className)}>
