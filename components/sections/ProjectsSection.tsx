@@ -8,6 +8,16 @@ import { fadeUp } from "@/lib/animations";
 const PROJECT_TAGS: Record<string, string[]> = {
   "proj-1": ["Golang", "Kafka", "PostgreSQL", "Redis"],
   "proj-2": ["Vue 3", "Tailwind CSS", "REST API"],
+  "proj-3": [
+    "Next.js",
+    "TypeScript",
+    "ReactJS",
+    "Tailwind CSS",
+    "PostgreSQL",
+    "Prisma",
+    "TanStack Query",
+    "Docker",
+  ],
 };
 
 export function ProjectsSection() {
@@ -33,11 +43,13 @@ export function ProjectsSection() {
                 </p>
               </div>
               <div className="flex flex-col items-end gap-2 flex-shrink-0">
-                <span className={`font-mono text-[10px] px-2 py-0.5 rounded-full border ${
-                  project.period === "Present"
-                    ? "text-emerald-600 border-emerald-200 bg-emerald-50"
-                    : "text-stone-400 border-stone-200"
-                }`}>
+                <span
+                  className={`font-mono text-[10px] px-2 py-0.5 rounded-full border ${
+                    project.period === "Present"
+                      ? "text-emerald-600 border-emerald-200 bg-emerald-50"
+                      : "text-stone-400 border-stone-200"
+                  }`}
+                >
                   {project.period}
                 </span>
                 {project.url && (
@@ -58,8 +70,13 @@ export function ProjectsSection() {
             {/* Bullets */}
             <ul className="space-y-1.5 flex-1 mb-5">
               {project.bullets.slice(0, 3).map((b, i) => (
-                <li key={i} className="flex gap-2 text-[13px] text-stone-500 leading-[1.65]">
-                  <span className="text-stone-300 mt-[0.4em] flex-shrink-0">·</span>
+                <li
+                  key={i}
+                  className="flex gap-2 text-[13px] text-stone-500 leading-[1.65]"
+                >
+                  <span className="text-stone-300 mt-[0.4em] flex-shrink-0">
+                    ·
+                  </span>
                   <span>{b}</span>
                 </li>
               ))}

@@ -81,6 +81,22 @@ export const PROJECTS = [
       "Delivered seamless purchase and digital download experience.",
     ],
   },
+  {
+    id: "proj-3",
+    name: "Syndrom TCM Expert",
+    type: "TCM Syndrome Expert System",
+    period: "May 2026–Jun 2026",
+    url: "https://sindrom.taiyin.id",
+    bullets: [
+      "Architected and delivered a full-stack AI-assisted diagnostic system applying the Certainty Factor (CF) algorithm to infer TCM syndromes from patient symptom profiles.",
+      "Designed a normalized relational schema (Complaint → Syndrome → SyndromeRule → SymptomOption) with weighted CF rules, enabling precise and extensible diagnostic scoring.",
+      "Built a type-safe REST API layer using Next.js App Router and Zod validation, covering diagnosis, consultation history, user feedback, and admin reporting endpoints.",
+      "Integrated Prisma ORM with a driver-adapter pattern on PostgreSQL, optimizing query performance and keeping the generated client committed for reproducible Docker builds.",
+      "Implemented anonymous consultation tracking via UUID-based visitor identity, enabling session continuity without requiring user authentication.",
+      "Delivered a protected admin panel with cookie-based session auth, supporting full CRUD management of knowledge-base entities.",
+      "Containerized the application with a multi-stage Docker build targeting a minimal Alpine runtime, with external PostgreSQL networking for production deployment flexibility.",
+    ],
+  },
 ];
 
 export const KEY_ACHIEVEMENTS = [
@@ -100,9 +116,15 @@ export const SKILLS = [
   "Vue 3",
   "Yii2",
   "JavaScript",
+  "TypeScript",
+  "Next.js",
+  "ReactJS",
   "Tailwind CSS",
   "jQuery",
   "Bootstrap",
+  "Prisma",
+  "TanStack Query",
+  "Docker",
   "POS Systems",
   "Event-Driven Architecture",
 ];
